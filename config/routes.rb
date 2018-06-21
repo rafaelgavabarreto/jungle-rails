@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
-    resources :category, only: [:index, :create, :new]
+    resources :categories, only: [:index, :create, :new]
   end
 
   # Thouse routes are to users. Create and sign in.
