@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
-    resources :category, only: [:index, :create, :new]
+    resources :categories, only: [:index, :create, :new]
   end
 
   # Thouse routes are to users. Create and sign in.
@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  # resources :login 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
