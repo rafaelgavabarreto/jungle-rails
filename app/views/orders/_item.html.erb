@@ -1,22 +1,28 @@
-<% item_total = line_item.product.price * line_item.quantity %>
-<% @order_total += item_total %>
+
+
+<% quantity = line_items.quantity %>
+
+<% if product = line_items.product %>
+  <% item_total = line_items.product.price * quantity %>
+  <% @order_total += item_total %>
 
 <tr>
   <td>
-    <%= image_tag line_item.product.image.tiny %>
+    <%= image_tag line_items.product.image.tiny %>
   </td>
   <td>
-    <h4><%= line_item.product.name %></h4>
+    <h4><%= line_items.product.name %></h4>
     <br>
-    <p><%= line_item.product.description %></p>
+    <p><%= line_items.product.description %></p>
   </td>
   <td>
-    <%= line_item.product.price %>
+    <%= line_items.product.price %>
   </td>
   <td>
-    <%= line_item.quantity %>
+    <%= line_items.quantity %>
   </td>
   <td>
     <%= item_total %>
   </td>
 </tr>
+<% end %>

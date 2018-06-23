@@ -7,10 +7,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      #  you can use a variable in redirect_to ---- look to your form tag!!!!!!!!
       redirect_to '/'
     else
-      redirect_to '/signin'
+      redirect_to '/login'
     end
   end
 

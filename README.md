@@ -3,26 +3,51 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 
-## Setup
-
-1. Fork & Clone
-2. Run `bundle install` to install dependencies
-3. Create `config/database.yml` by copying `config/database.example.yml`
-4. Create `config/secrets.yml` by copying `config/secrets.example.yml`
-5. Run `bin/rake db:reset` to create, load and seed db
-6. Create .env file based on .env.example
-7. Sign up for a Stripe account
-8. Put Stripe (test) keys into appropriate .env vars
-9. Run `bin/rails s -b 0.0.0.0` to start the server
-
 ## Stripe Testing
 
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
-More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+
+## Screen Shots
+
+All Products
+!["All Products"](https://github.com/rafaelgavabarreto/jungle-rails/blob/master/img/AllProducts.png)
+
+Filter By Categories
+!["Filter By Categories"](https://github.com/rafaelgavabarreto/jungle-rails/blob/master/img/FilterByCategories.png)
+
+Product Review
+!["Product Review"](https://github.com/rafaelgavabarreto/jungle-rails/blob/master/img/ProductReview.png)
+
+Sold Out
+!["Sold Out"](https://github.com/rafaelgavabarreto/jungle-rails/blob/master/img/SoldOut.png)
+
+Admin Can Delete Product
+!["Admin Can Delete Product"](https://github.com/rafaelgavabarreto/jungle-rails/blob/master/img/AdminCanDeleteProduct.png)
+
+Show Cart
+!["Show Cart"](https://github.com/rafaelgavabarreto/jungle-rails/blob/master/img/ShowCart.png)
+
+Pay With CreditCard
+!["Pay With CreditCard"](https://github.com/rafaelgavabarreto/jungle-rails/blob/master/img/PayWithCreditCard.png)
+
+Order Confirmation
+!["Order Confirmation"](https://github.com/rafaelgavabarreto/jungle-rails/blob/master/img/OrderConfirmation.png)
+
+Login Page
+!["Login Page"](https://github.com/rafaelgavabarreto/jungle-rails/blob/master/img/LoginPage.png)
+
+New User Page
+!["New User Page"](https://github.com/rafaelgavabarreto/jungle-rails/blob/master/img/NewUserPage.png)
+
+
+
+
+

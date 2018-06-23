@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  private
+
   def user
     @user ||= User.find(session[:user_id]) if session[:user_id]
   end
@@ -12,8 +14,6 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to '/login' unless user
   end
-
-  private
 
   def cart
     # value = cookies[:cart] || JSON.generate({})
@@ -27,6 +27,10 @@ class ApplicationController < ActionController::Base
       expires: 10.days.from_now
     }
     cookies[:cart]
+  end
+
+  def basic_authorize
+    http_basic_authenticate_with name: ENV['ADMIN_NAME'], password: ENV['ADMIN_PASS']
   end
 
 end
