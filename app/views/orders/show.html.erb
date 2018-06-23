@@ -1,18 +1,46 @@
+
+
 <section class="orders-show">
 
-  <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
-  </header>
+ <header class="page-header">
+   <h1>Order #<%= @order.id %></h1>
+   <h3>Confirmation email sent to <%= user.email %></h3>
+ </header>
 
-  <div class="order-summary jumbotron">
-    <h4>Thank you for your order <%= user.name %>!</h4>
-    <% line_items = LineItem.where(order_id: @order.id) %>
-      <% line_items.each do |line_item| %>
-        <%= render 'item', product_id: line_item.product_id, line_total: line_item.total_price %>
-      <% end %>
-      Your order total: <%= humanized_money_with_symbol @order.total %> <br/>
-        The order will be email to <%= user.email %>. <br/>
-      </h4>
-  </div>
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
+ <div class="order-summary jumbotron">
+   <h4>Thank you for your order!</h4>
+
+   <div class="panel panel-default items">
+     <table class="table table-bordered">
+       <thead>
+         <tr>
+           <th colspan="2">Product</th>
+           <th>Unit Price</th>
+           <th>Quantity</th>
+           <th>Price</th>
+         </tr>
+       </thead>
+       <tbody>
+         <% @order_total = 0 %>
+         <% @order.line_items.each do | line_items | %>
+           <%= render 'item', line_items: line_items %>
+         <% end %>
+       </tbody>
+       <tfoot>
+         <tr>
+           <th colspan="4">
+             TOTAL:
+           </th>
+           <th>
+             <%= @order_total %>
+           </th>
+         </tr>
+       </tfoot>
+     </table>
+   </div>
+
+ </div>
+
+ <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
+
 </section>

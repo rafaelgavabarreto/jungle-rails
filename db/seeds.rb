@@ -132,5 +132,41 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## Users
+
+User.destroy_all
+
+User.create!({
+  first_name: 'asd',
+  last_name: 'asd',
+  email: 'rafael@gmail.com',
+  password: 'asd',
+  password_confirmation: 'asd'
+  })
+
+##Reviews
+Review.destroy_all
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: 'Yey!',
+  rating: 5
+})
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: 'Thats ok!',
+  rating: 4
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 1,
+  description: 'Great LightHouse Labs Design',
+  rating: 2
+})
+
 
 puts "DONE!"
